@@ -1,0 +1,89 @@
+﻿<Window x:Class="WpfApplication1.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Snake!" Height="518" Width="860" ResizeMode="NoResize">
+
+    <Grid>
+        <Canvas Name="paintCanvas" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="480" Width="640">
+
+        </Canvas>
+        <Grid HorizontalAlignment="Right" Width="200" Background="White">
+            <Grid Grid.Row="0" VerticalAlignment="Top">
+                <Menu IsMainMenu="True" Height="auto" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="auto">
+                    <MenuItem Header="Difficulty">
+                        <MenuItem Header="Easy" Click="Easy_Click"/>
+                        <MenuItem Header="Medium" Click="Medium_Click"/>
+                        <MenuItem Header="Hard" Click="Hard_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Colour">
+                        <MenuItem Header="Background">
+                            <MenuItem Header="Red" Click="RedBG_Click"/>
+                            <MenuItem Header="Blue" Click="BlueBG_Click"/>
+                            <MenuItem Header="Green" Click="GreenBG_Click"/>
+                            <MenuItem Header="Yellow" Click="YellowBG_Click"/>
+                            <MenuItem Header="Black" Click="BlackBG_Click"/>
+                            <MenuItem Header="White" Click="WhiteBG_Click"/>
+                            <MenuItem Header="Purple" Click="PurpleBG_Click"/>
+                        </MenuItem>
+                        <MenuItem Header="Snake" Click="MenuItem_Click">
+                            <MenuItem Header="Red" Click="RedSnake_Click"/>
+                            <MenuItem Header="Blue" Click="BlueSnake_Click"/>
+                            <MenuItem Header="Green" Click="GreenSnake_Click"/>
+                            <MenuItem Header="Yellow" Click="YellowSnake_Click"/>
+                            <MenuItem Header="Black" Click="BlackSnake_Click"/>
+                            <MenuItem Header="White" Click="WhiteSnake_Click"/>
+                            <MenuItem Header="Purple" Click="PurpleSnake_Click"/>
+                        </MenuItem>
+                        <MenuItem Header="Food">
+                            <MenuItem Header="Red" Click="RedFood_Click"/>
+                            <MenuItem Header="Blue" Click="BlueFood_Click"/>
+                            <MenuItem Header="Green" Click="GreenFood_Click"/>
+                            <MenuItem Header="Yellow" Click="YellowFood_Click"/>
+                            <MenuItem Header="Black" Click="BlackFood_Click"/>
+                            <MenuItem Header="White" Click="WhiteFood_Click"/>
+                            <MenuItem Header="Purple" Click="PurpleFood_Click"/>
+                        </MenuItem>                   
+                    </MenuItem>
+                    <MenuItem Header="About">
+                        <MenuItem Header="Team" Click="AboutTeamDialog_Click"/>
+                    </MenuItem>
+
+                </Menu>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock Grid.Column="0" FontSize="15" FontWeight="UltraBold" FontFamily="Calibri">Score:</TextBlock>
+                <TextBlock Grid.Column="1" FontSize="15" FontWeight="UltraBold" FontFamily="Calibri" Name="ScoreLabel">0</TextBlock>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="2" VerticalAlignment="Stretch">
+                <ListView MaxWidth="200" x:Name="HighScoreListView">
+                    <ListView.View>
+                        <GridView x:Name="HighScoreGridView">
+                            <GridViewColumn Width="auto"/>
+                            <GridViewColumn Width="auto" />
+                            <GridViewColumn Width="auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            <Grid Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <TextBlock Grid.Row="0" FontSize="15" Foreground="Red" FontWeight="UltraBold" FontFamily="Calibri" Name="StartLabel">Enter - Start Game</TextBlock>
+                <TextBlock Grid.Row="1" FontSize="15" FontWeight="UltraBold" FontFamily="Calibri">P - Pause / Resume</TextBlock>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="WpfApplication2.AddName"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddName" Height="100" Width="300">
+    <StackPanel HorizontalAlignment="Stretch" >
+        <TextBlock HorizontalAlignment="Left"  Text="Enter Your Name" />
+        <TextBox x:Name="ResponseTextBox" />
+        <Button Content="OK" Click="OKButton_Click" />
+    </StackPanel>
+</Window>
